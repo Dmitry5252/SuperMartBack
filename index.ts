@@ -21,7 +21,7 @@ app.use(itemRouter);
 app.use(cartRouter);
 
 try {
-  mongoose.connect("mongodb://localhost:27017/shopdb");
+  mongoose.connect(process.env.MONGO_URI as string);
   console.log("connected to db");
 } catch (error) {
   console.log(error);
